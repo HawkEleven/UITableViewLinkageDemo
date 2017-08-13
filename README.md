@@ -47,7 +47,7 @@ iOS采用UITableView来实现Excel、课程表、汽车之家车辆参数对比�
 **b)** sectionHeader左侧、右侧视图同时显示，如GIF图所示，此时只能将self.backgroundTableView视图置于self.scrollView的上层，这样才能将sectionHeader显示出来，如下图所示：
 ![层级.jpeg](http://upload-images.jianshu.io/upload_images/1338824-4d3242e16a80e6d1.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-sectionHeader可以看到，但右侧的列表全被遮盖，因此将self.backgroundTableView的颜色设为clearColor，这样就可以看到背部的列表。但由于self.backgroundTableView在self.scrollView的上层，因此，self.scrollView的tableview不可以交互。要想交互，只能设置self.backgroundTableView的交互区域(左侧可以交互，右侧不可以交互)。那么就要重写self.backgroundTableView的**-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event**方法。
+sectionHeader可以看到，但右侧的列表全被遮盖，因此将self.backgroundTableView的颜色设为clearColor，这样就可以看到背部的列表。但由于self.backgroundTableView在self.scrollView的上层，因此，self.scrollView的tableview不可以交互。要想交互，只能设置self.backgroundTableView的交互区域(左侧可以交互，右侧不可以交互)。那么就要重写self.backgroundTableView的-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event方法。
 
 
 ```objc
@@ -62,7 +62,7 @@ sectionHeader可以看到，但右侧的列表全被遮盖，因此将self.backg
 }
 ```
 
-在scrollView的** -(void)scrollViewDidScroll:(UIScrollView *)scrollView **中设置交互区域path。
+在scrollView的-(void)scrollViewDidScroll:(UIScrollView *)scrollView中设置交互区域path。
 
 ```objc
 UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, scrollView.contentOffset.y, 94, CGRectGetHeight(self.backgroundTableView.frame))];
