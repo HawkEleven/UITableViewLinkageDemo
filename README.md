@@ -8,6 +8,7 @@ iOS采用UITableView来实现Excel、课程表、汽车之家车辆参数对比�
 ![列表.jpeg](http://upload-images.jianshu.io/upload_images/1338824-b1913d0aa37ca25a.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ####效果如下
+
 ![列表左右上下滑动.gif](http://upload-images.jianshu.io/upload_images/1338824-46230582665664d3.gif?imageMogr2/auto-orient/strip)
 
 ### 方案实现
@@ -18,6 +19,7 @@ iOS采用UITableView来实现Excel、课程表、汽车之家车辆参数对比�
 3）绿色区域背部是UIScrollView (***self.scrollView***)；
 
 4）绿色区域上边一列一列为UITableVie，切添加到self.scrollView。
+
 ####这里有两种情况：
 **a)** sectionHeader只有左侧有视图显示，没有右侧“标配”、“选配”等视图。
 此时的视图层级为：
@@ -77,7 +79,7 @@ self.scrollView.frame = CGRectMake(kItemWidth, 0, kScreenWidth - kItemWidth, sel
 ```
 <del>```objc
 tableView.frame = CGRectMake(kItemWidth * self.count, 0, kItemWidth, self.backgroundTableView.contentSize.height);
-```
+```</del>
 
 ### 结尾
 本Demo是从项目中拆分整理而来，如有问题欢迎指正，若对你有所帮助，还望star支持下~
