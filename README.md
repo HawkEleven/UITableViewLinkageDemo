@@ -60,7 +60,7 @@ sectionHeader可以看到，但右侧的列表全被遮盖，因此将self.backg
 }
 ```
 
-在scrollView的**- (void)scrollViewDidScroll:(UIScrollView *)scrollView**中设置交互区域path。
+在scrollView的**-(void)scrollViewDidScroll:(UIScrollView *)scrollView**中设置交互区域path。
 
 ```objc
 UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, scrollView.contentOffset.y, 94, CGRectGetHeight(self.backgroundTableView.frame))];
@@ -78,5 +78,6 @@ self.scrollView.frame = CGRectMake(kItemWidth, 0, kScreenWidth - kItemWidth, sel
 <del>```objc
 tableView.frame = CGRectMake(kItemWidth * self.count, 0, kItemWidth, self.backgroundTableView.contentSize.height);
 ```
+
 ### 结尾
 本Demo是从项目中拆分整理而来，如有问题欢迎指正，若对你有所帮助，还望star支持下~
