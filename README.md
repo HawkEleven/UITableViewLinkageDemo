@@ -71,15 +71,19 @@ self.backgroundTableView.path = path;
 
 
 
-####重点注意方面
+#### 重点注意方面
 self.scrollView的height等于self.backgroundTableView.contentSize.height。<del>同时，右侧列表的tableview的height也等于self.backgroundTableView.contentSize.height。
 
 ```objc
 self.scrollView.frame = CGRectMake(kItemWidth, 0, kScreenWidth - kItemWidth, self.backgroundTableView.contentSize.height);
 ```
-<del>```objc
+<del>
+
+```objc
 tableView.frame = CGRectMake(kItemWidth * self.count, 0, kItemWidth, self.backgroundTableView.contentSize.height);
-```</del>
+```
+
+</del>
 
 ### 结尾
 本Demo是从项目中拆分整理而来，如有问题欢迎指正，若对你有所帮助，还望star支持下~
