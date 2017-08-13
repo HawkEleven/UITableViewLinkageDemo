@@ -7,7 +7,7 @@ iOS采用UITableView来实现Excel、课程表、汽车之家车辆参数对比�
 
 ![列表.jpeg](http://upload-images.jianshu.io/upload_images/1338824-b1913d0aa37ca25a.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-####效果如下
+#### 效果如下
 
 ![列表左右上下滑动.gif](http://upload-images.jianshu.io/upload_images/1338824-46230582665664d3.gif?imageMogr2/auto-orient/strip)
 
@@ -20,7 +20,7 @@ iOS采用UITableView来实现Excel、课程表、汽车之家车辆参数对比�
 
 4）绿色区域上边一列一列为UITableVie，切添加到self.scrollView。
 
-####这里有两种情况：
+#### 这里有两种情况：
 **a)** sectionHeader只有左侧有视图显示，没有右侧“标配”、“选配”等视图。
 此时的视图层级为：
 
@@ -62,7 +62,7 @@ sectionHeader可以看到，但右侧的列表全被遮盖，因此将self.backg
 }
 ```
 
-在scrollView的**-(void)scrollViewDidScroll:(UIScrollView *)scrollView**中设置交互区域path。
+在scrollView的** -(void)scrollViewDidScroll:(UIScrollView *)scrollView **中设置交互区域path。
 
 ```objc
 UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, scrollView.contentOffset.y, 94, CGRectGetHeight(self.backgroundTableView.frame))];
