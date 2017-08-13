@@ -20,6 +20,7 @@
 		18700D991F0A18A300F51FB4 /* CompareHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18700D901F0A18A300F51FB4 /* CompareHeaderView.xib */; };
 		18700D9A1F0A18A300F51FB4 /* CompareSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18700D921F0A18A300F51FB4 /* CompareSectionHeaderView.m */; };
 		18700D9B1F0A18A300F51FB4 /* CompareSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18700D931F0A18A300F51FB4 /* CompareSectionHeaderView.xib */; };
+		18908EB71F403D2200861692 /* CompareTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18908EB61F403D2200861692 /* CompareTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		18700D911F0A18A300F51FB4 /* CompareSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareSectionHeaderView.h; sourceTree = "<group>"; };
 		18700D921F0A18A300F51FB4 /* CompareSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareSectionHeaderView.m; sourceTree = "<group>"; };
 		18700D931F0A18A300F51FB4 /* CompareSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompareSectionHeaderView.xib; sourceTree = "<group>"; };
+		18908EB51F403D2200861692 /* CompareTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareTableView.h; sourceTree = "<group>"; };
+		18908EB61F403D2200861692 /* CompareTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 		18700D8A1F0A18A300F51FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18908EB51F403D2200861692 /* CompareTableView.h */,
+				18908EB61F403D2200861692 /* CompareTableView.m */,
 				18700D8B1F0A18A300F51FB4 /* CompareCell.h */,
 				18700D8C1F0A18A300F51FB4 /* CompareCell.m */,
 				18700D8D1F0A18A300F51FB4 /* CompareCell.xib */,
@@ -287,6 +292,7 @@
 				18700D5D1F09ED4100F51FB4 /* main.m in Sources */,
 				18700D981F0A18A300F51FB4 /* CompareHeaderView.m in Sources */,
 				18700D951F0A18A300F51FB4 /* AppDelegate.m in Sources */,
+				18908EB71F403D2200861692 /* CompareTableView.m in Sources */,
 				18700D961F0A18A300F51FB4 /* CompareCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

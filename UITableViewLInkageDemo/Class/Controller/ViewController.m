@@ -11,6 +11,7 @@
 #import "CompareHeaderView.h"
 #import "CompareSectionHeaderView.h"
 #import "Header.h"
+#import "CompareTableView.h"
 
 typedef NS_ENUM(NSInteger, ParameterCompareType) {
     ParameterCompareTypeAdd, // 添加车型
@@ -24,7 +25,7 @@ static CGFloat const kHeaderHeight = 66;
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 /** 参数名称列表 */
-@property (nonatomic, strong) UITableView *backgroundTableView;
+@property (nonatomic, strong) CompareTableView *backgroundTableView;
 @property (nonatomic, strong) UITableView *emptyTableView;
 @property (nonatomic, strong) CompareHiddenHeader *hiddenHeader;
 @property (nonatomic, strong) CompareAddHeader *addHeader;
@@ -61,16 +62,19 @@ static CGFloat const kHeaderHeight = 66;
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.scrollView.frame = CGRectMake(kItemWidth, 0, kScreenWidth - kItemWidth, self.backgroundTableView.contentSize.height);
-    CGRect emptyFrame = self.emptyTableView.frame;
-    emptyFrame.size.height = self.backgroundTableView.contentSize.height;
-    self.emptyTableView.frame = emptyFrame;
+    self.scrollView.frame = CGRectMake(kItemWidth, 64 + kHeaderHeight, kScreenWidth - kItemWidth, self.backgroundTableView.contentSize.height);
+    CGSize contentSize = self.scrollView.contentSize;
+    contentSize.height = self.backgroundTableView.contentSize.height;
+    self.scrollView.contentSize = contentSize;
 }
 
 #pragma mark - private methods
 - (void)_initUI {
     [self.view addSubview:self.hiddenHeader];
-    [self.backgroundTableView addSubview:self.scrollView];
+
+    [self.view addSubview:self.scrollView];
+    [self.view addSubview:self.backgroundTableView];
+    
     [self.scrollView addSubview:self.emptyTableView];
     [self.tableViewArr addObject:self.emptyTableView];
     [self.view addSubview:self.littleScrollView];
@@ -88,10 +92,8 @@ static CGFloat const kHeaderHeight = 66;
     tableView.dataSource = self;
     tableView.rowHeight = 40;
     tableView.showsVerticalScrollIndicator = NO;
-    tableView.scrollEnabled = NO;
     tableView.bounces = NO;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.showsVerticalScrollIndicator = NO;
     return tableView;
 }
 
@@ -143,7 +145,7 @@ static CGFloat const kHeaderHeight = 66;
 
 #pragma mark - load Data
 - (void)_loadParameterDataWithCout:(NSInteger)count {
-    // 模拟网咯请求
+    // 模拟网络请求
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [self.sectionArr removeAllObjects];
@@ -201,6 +203,7 @@ static CGFloat const kHeaderHeight = 66;
     if (tableView == _backgroundTableView) {
         CompareLeftCell *leftCell = [CompareLeftCell cellWithTableView:tableView];
         leftCell.titleLabel.text = self.rowArr[indexPath.row];
+        leftCell.backgroundColor = [UIColor clearColor];
         return leftCell;
     } else if (tableView == _emptyTableView) {
         CompareRightCell *rightCell = [CompareRightCell cellWithTableView:tableView];
@@ -218,6 +221,15 @@ static CGFloat const kHeaderHeight = 66;
     CompareSectionHeaderView *sectionHeader = [CompareSectionHeaderView creatView];
     sectionHeader.titleLabel.text = self.sectionArr[section];
     return sectionHeader;
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
+//    label.text = [NSString stringWithFormat:@"   基本参数%zi", section];
+//    label.font = [UIFont systemFontOfSize:10];
+//    label.textColor = HexColorInt32_t(1E2124);
+//    label.backgroundColor = HexColorInt32_t(F0F0F0);
+//    if (tableView != self.backgroundTableView) {
+//        label.text = @"";
+//    }
+//    return label;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -234,13 +246,29 @@ static CGFloat const kHeaderHeight = 66;
         if (self.littleScrollView.contentOffset.x != self.scrollView.contentOffset.x) {
             self.littleScrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, 0);
         }
+    } else if ([scrollView isKindOfClass:[UITableView class]]) {
+        if (scrollView == self.backgroundTableView) {
+            for (UITableView *right in self.tableViewArr) {
+                right.contentOffset = CGPointMake(0, self.backgroundTableView.contentOffset.y);
+            }
+        } else {
+            UITableView *scrollTableView = (UITableView *)scrollView;
+            self.backgroundTableView.contentOffset = CGPointMake(0, scrollTableView.contentOffset.y);
+            for (NSInteger i = 0; i < self.tableViewArr.count; i ++) {
+                if (self.tableViewArr[i] != scrollTableView) {
+                    self.tableViewArr[i].contentOffset = CGPointMake(0, scrollTableView.contentOffset.y);
+                }
+            }
+        }
     }
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, scrollView.contentOffset.y, 94, CGRectGetHeight(self.backgroundTableView.frame))];
+    self.backgroundTableView.path = path;
 }
 
 #pragma mark - event response
 - (void)_addModels {
     UITableView *tableView = [self _creatTableView];
-    tableView.frame = CGRectMake(kItemWidth * self.count, 0, kItemWidth, self.backgroundTableView.contentSize.height);
+    tableView.frame = CGRectMake(kItemWidth * self.count, 0, kItemWidth, kScreenHeight - 64 - kHeaderHeight);
     [self.scrollView addSubview:tableView];
     [self.tableViewArr insertObject:tableView atIndex:self.tableViewArr.count - 1];
     [tableView reloadData];
@@ -268,11 +296,17 @@ static CGFloat const kHeaderHeight = 66;
 }
 
 #pragma mark - getter
-- (UITableView *)backgroundTableView {
+- (CompareTableView *)backgroundTableView {
     if (!_backgroundTableView) {
-        _backgroundTableView = [self _creatTableView];
-        _backgroundTableView.frame = CGRectMake(0, 64 + kHeaderHeight, kScreenWidth, kScreenHeight - 64 - kHeaderHeight);
+        _backgroundTableView = [[CompareTableView alloc] initWithFrame:CGRectMake(0, 64 + kHeaderHeight, kScreenWidth, kScreenHeight - 64 - kHeaderHeight)];
+        _backgroundTableView.delegate = self;
+        _backgroundTableView.dataSource = self;
+        _backgroundTableView.rowHeight = 40;
+        _backgroundTableView.showsVerticalScrollIndicator = NO;
+        _backgroundTableView.bounces = NO;
+        _backgroundTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _backgroundTableView.scrollEnabled = YES;
+        _backgroundTableView.backgroundColor = [UIColor clearColor];
         [self.view addSubview:_backgroundTableView];
     }
     return _backgroundTableView;

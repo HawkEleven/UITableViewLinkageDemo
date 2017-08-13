@@ -12,7 +12,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
@@ -31,7 +30,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
