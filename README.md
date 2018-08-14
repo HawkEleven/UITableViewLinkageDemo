@@ -18,7 +18,7 @@ iOS采用UITableView来实现Excel、课程表、汽车之家车辆参数对比�
 
 ### 方案实现(2018-08-14重构)
 
-1）视图有两部分组成：左侧***ConfigurationView***和右侧***CompareDetailView***；
+1）视图有两部分组成：左侧**ConfigurationView**和右侧**CompareDetailView**；
 
 2）CompareDetailView在视图底层，宽度为绿色区域宽，核心为UICollectionView，collectionViewCell上添加“头部蓝色视图”和“UITableview”；
 
