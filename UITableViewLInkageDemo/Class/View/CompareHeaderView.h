@@ -14,6 +14,7 @@ typedef void(^ParameterClickBlock)();
 
 @property (nonatomic, copy) ParameterClickBlock hiddenBlock;
 
+
 + (instancetype)creatView;
 
 @end

@@ -20,7 +20,17 @@
 		18700D991F0A18A300F51FB4 /* CompareHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18700D901F0A18A300F51FB4 /* CompareHeaderView.xib */; };
 		18700D9A1F0A18A300F51FB4 /* CompareSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18700D921F0A18A300F51FB4 /* CompareSectionHeaderView.m */; };
 		18700D9B1F0A18A300F51FB4 /* CompareSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18700D931F0A18A300F51FB4 /* CompareSectionHeaderView.xib */; };
-		18908EB71F403D2200861692 /* CompareTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18908EB61F403D2200861692 /* CompareTableView.m */; };
+		A56862E02122743F00F4D56E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A56862D82122743F00F4D56E /* LICENSE */; };
+		A56862E12122743F00F4D56E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A56862D92122743F00F4D56E /* README.md */; };
+		A56862E22122743F00F4D56E /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A56862DD2122743F00F4D56E /* NSObject+YYModel.m */; };
+		A56862E32122743F00F4D56E /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A56862DE2122743F00F4D56E /* YYClassInfo.m */; };
+		A56862E62122806C00F4D56E /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A56862E52122806C00F4D56E /* BackgroundView.m */; };
+		A56862EC2122B8F800F4D56E /* CompareTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A56862EA2122B8F800F4D56E /* CompareTableView.m */; };
+		A59237ED2121785B0055A5B4 /* CompareCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59237EC2121785B0055A5B4 /* CompareCollectionCell.m */; };
+		A59237F021217ED40055A5B4 /* ConfigurationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59237EF21217ED40055A5B4 /* ConfigurationView.m */; };
+		A59237F321217EEA0055A5B4 /* CompareDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59237F221217EEA0055A5B4 /* CompareDetailView.m */; };
+		A59237FA21218BCD0055A5B4 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A59237F921218BCD0055A5B4 /* CarModel.m */; };
+		A59237FC21218CFE0055A5B4 /* comparedata.json in Resources */ = {isa = PBXBuildFile; fileRef = A59237FB21218CFE0055A5B4 /* comparedata.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +67,27 @@
 		18700D911F0A18A300F51FB4 /* CompareSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareSectionHeaderView.h; sourceTree = "<group>"; };
 		18700D921F0A18A300F51FB4 /* CompareSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareSectionHeaderView.m; sourceTree = "<group>"; };
 		18700D931F0A18A300F51FB4 /* CompareSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompareSectionHeaderView.xib; sourceTree = "<group>"; };
-		18908EB51F403D2200861692 /* CompareTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareTableView.h; sourceTree = "<group>"; };
-		18908EB61F403D2200861692 /* CompareTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareTableView.m; sourceTree = "<group>"; };
+		A56862D82122743F00F4D56E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A56862D92122743F00F4D56E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A56862DB2122743F00F4D56E /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		A56862DC2122743F00F4D56E /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		A56862DD2122743F00F4D56E /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		A56862DE2122743F00F4D56E /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		A56862DF2122743F00F4D56E /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		A56862E42122806C00F4D56E /* BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
+		A56862E52122806C00F4D56E /* BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
+		A56862E72122834D00F4D56E /* EScrollDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EScrollDelegate.h; sourceTree = "<group>"; };
+		A56862EA2122B8F800F4D56E /* CompareTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareTableView.m; sourceTree = "<group>"; };
+		A56862EB2122B8F800F4D56E /* CompareTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareTableView.h; sourceTree = "<group>"; };
+		A59237EB2121785B0055A5B4 /* CompareCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompareCollectionCell.h; sourceTree = "<group>"; };
+		A59237EC2121785B0055A5B4 /* CompareCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompareCollectionCell.m; sourceTree = "<group>"; };
+		A59237EE21217ED40055A5B4 /* ConfigurationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationView.h; sourceTree = "<group>"; };
+		A59237EF21217ED40055A5B4 /* ConfigurationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigurationView.m; sourceTree = "<group>"; };
+		A59237F121217EEA0055A5B4 /* CompareDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompareDetailView.h; sourceTree = "<group>"; };
+		A59237F221217EEA0055A5B4 /* CompareDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompareDetailView.m; sourceTree = "<group>"; };
+		A59237F821218BCD0055A5B4 /* CarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
+		A59237F921218BCD0055A5B4 /* CarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
+		A59237FB21218CFE0055A5B4 /* comparedata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comparedata.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +155,9 @@
 		18700D811F0A18A300F51FB4 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A56862D72122743F00F4D56E /* YYModel */,
 				18700D821F0A18A300F51FB4 /* Controller */,
-				18700D851F0A18A300F51FB4 /* Model */,
+				A59237F721218BC10055A5B4 /* Model */,
 				18700D8A1F0A18A300F51FB4 /* View */,
 				18700D861F0A18A300F51FB4 /* Other */,
 			);
@@ -143,16 +173,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		18700D851F0A18A300F51FB4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		18700D861F0A18A300F51FB4 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				A56862E72122834D00F4D56E /* EScrollDelegate.h */,
+				A59237FB21218CFE0055A5B4 /* comparedata.json */,
 				18700D641F09ED4100F51FB4 /* Main.storyboard */,
 				18700D671F09ED4100F51FB4 /* Assets.xcassets */,
 				18700D691F09ED4100F51FB4 /* LaunchScreen.storyboard */,
@@ -167,19 +192,74 @@
 		18700D8A1F0A18A300F51FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				18908EB51F403D2200861692 /* CompareTableView.h */,
-				18908EB61F403D2200861692 /* CompareTableView.m */,
+				A56862E82122875E00F4D56E /* Configuration */,
+				A56862E92122876E00F4D56E /* CompareDetail */,
+				A56862EB2122B8F800F4D56E /* CompareTableView.h */,
+				A56862EA2122B8F800F4D56E /* CompareTableView.m */,
 				18700D8B1F0A18A300F51FB4 /* CompareCell.h */,
 				18700D8C1F0A18A300F51FB4 /* CompareCell.m */,
 				18700D8D1F0A18A300F51FB4 /* CompareCell.xib */,
 				18700D8E1F0A18A300F51FB4 /* CompareHeaderView.h */,
 				18700D8F1F0A18A300F51FB4 /* CompareHeaderView.m */,
 				18700D901F0A18A300F51FB4 /* CompareHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A56862D72122743F00F4D56E /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				A56862D82122743F00F4D56E /* LICENSE */,
+				A56862D92122743F00F4D56E /* README.md */,
+				A56862DA2122743F00F4D56E /* YYModel */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		A56862DA2122743F00F4D56E /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				A56862DB2122743F00F4D56E /* YYClassInfo.h */,
+				A56862DC2122743F00F4D56E /* YYModel.h */,
+				A56862DD2122743F00F4D56E /* NSObject+YYModel.m */,
+				A56862DE2122743F00F4D56E /* YYClassInfo.m */,
+				A56862DF2122743F00F4D56E /* NSObject+YYModel.h */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		A56862E82122875E00F4D56E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A56862E42122806C00F4D56E /* BackgroundView.h */,
+				A56862E52122806C00F4D56E /* BackgroundView.m */,
+				A59237EE21217ED40055A5B4 /* ConfigurationView.h */,
+				A59237EF21217ED40055A5B4 /* ConfigurationView.m */,
 				18700D911F0A18A300F51FB4 /* CompareSectionHeaderView.h */,
 				18700D921F0A18A300F51FB4 /* CompareSectionHeaderView.m */,
 				18700D931F0A18A300F51FB4 /* CompareSectionHeaderView.xib */,
 			);
-			path = View;
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A56862E92122876E00F4D56E /* CompareDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A59237F121217EEA0055A5B4 /* CompareDetailView.h */,
+				A59237F221217EEA0055A5B4 /* CompareDetailView.m */,
+				A59237EB2121785B0055A5B4 /* CompareCollectionCell.h */,
+				A59237EC2121785B0055A5B4 /* CompareCollectionCell.m */,
+			);
+			path = CompareDetail;
+			sourceTree = "<group>";
+		};
+		A59237F721218BC10055A5B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A59237F821218BCD0055A5B4 /* CarModel.h */,
+				A59237F921218BCD0055A5B4 /* CarModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +346,11 @@
 			files = (
 				18700D991F0A18A300F51FB4 /* CompareHeaderView.xib in Resources */,
 				18700D9B1F0A18A300F51FB4 /* CompareSectionHeaderView.xib in Resources */,
+				A56862E02122743F00F4D56E /* LICENSE in Resources */,
 				18700D6B1F09ED4100F51FB4 /* LaunchScreen.storyboard in Resources */,
 				18700D681F09ED4100F51FB4 /* Assets.xcassets in Resources */,
+				A59237FC21218CFE0055A5B4 /* comparedata.json in Resources */,
+				A56862E12122743F00F4D56E /* README.md in Resources */,
 				18700D661F09ED4100F51FB4 /* Main.storyboard in Resources */,
 				18700D971F0A18A300F51FB4 /* CompareCell.xib in Resources */,
 			);
@@ -287,12 +370,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A56862E62122806C00F4D56E /* BackgroundView.m in Sources */,
 				18700D941F0A18A300F51FB4 /* ViewController.m in Sources */,
+				A59237F021217ED40055A5B4 /* ConfigurationView.m in Sources */,
 				18700D9A1F0A18A300F51FB4 /* CompareSectionHeaderView.m in Sources */,
+				A56862E22122743F00F4D56E /* NSObject+YYModel.m in Sources */,
+				A56862EC2122B8F800F4D56E /* CompareTableView.m in Sources */,
+				A59237F321217EEA0055A5B4 /* CompareDetailView.m in Sources */,
 				18700D5D1F09ED4100F51FB4 /* main.m in Sources */,
 				18700D981F0A18A300F51FB4 /* CompareHeaderView.m in Sources */,
+				A59237ED2121785B0055A5B4 /* CompareCollectionCell.m in Sources */,
 				18700D951F0A18A300F51FB4 /* AppDelegate.m in Sources */,
-				18908EB71F403D2200861692 /* CompareTableView.m in Sources */,
+				A56862E32122743F00F4D56E /* YYClassInfo.m in Sources */,
+				A59237FA21218BCD0055A5B4 /* CarModel.m in Sources */,
 				18700D961F0A18A300F51FB4 /* CompareCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
