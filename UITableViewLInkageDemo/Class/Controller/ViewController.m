@@ -93,11 +93,14 @@ typedef NS_ENUM(NSInteger, ParameterCompareType) {
 #pragma mark - EScrollDelegate
 #pragma mark - tableveiw联动设置
 - (void)e_scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == self.configurationView.tableView) {
-        [self.compareDetailView setScrollWithContentOffset:scrollView.contentOffset];
-    } else {
-        [self.configurationView setScrollWithContentOffset:scrollView.contentOffset];
-    }
+//    if (scrollView == self.configurationView.tableView) {
+//        [self.compareDetailView setScrollWithContentOffset:scrollView.contentOffset];
+//    } else {
+//        [self.configurationView setScrollWithContentOffset:scrollView.contentOffset];
+//    }
+    [self.compareDetailView setScrollWithContentOffset:scrollView.contentOffset];
+    [self.configurationView setScrollWithContentOffset:scrollView.contentOffset];
+
 }
 
 #pragma mark - getter

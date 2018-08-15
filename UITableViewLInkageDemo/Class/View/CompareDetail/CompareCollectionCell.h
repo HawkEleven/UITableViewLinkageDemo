@@ -13,7 +13,6 @@
 @interface CompareCollectionCell : UICollectionViewCell
 
 @property (nonatomic, strong) UITableView *tableView;
-//@property (nonatomic, strong) CarModel *model;
 @property (nonatomic,   weak) id<EScrollDelegate> delegate;
 
 - (void)setModel:(CarModel *)model index:(NSInteger)index;

@@ -12,10 +12,11 @@
 #import "CompareCollectionCell.h"
 
 static NSString * const CellIdentifier = @"CompareCollectionCell";
-@interface CompareDetailView () <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface CompareDetailView () <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, assign) CGPoint setOffset;
 
 @end
 
@@ -28,14 +29,12 @@ static NSString * const CellIdentifier = @"CompareCollectionCell";
 
 #pragma mark - public method
 - (void)setScrollWithContentOffset:(CGPoint)offset {
-    NSInteger sections = self.collectionView.numberOfSections;
-    for (int section = 0; section < sections; section++) {
-        NSInteger items =  [self.collectionView numberOfItemsInSection:section];
-        for (int item = 0; item < items; item ++) {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:item inSection:section];
-            CompareCollectionCell *cell = (CompareCollectionCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
-            cell.tableView.contentOffset = offset;
-        }
+    self.setOffset = offset;
+
+    for (int i = 0; i < self.dataArr.count; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        CompareCollectionCell *cell = (CompareCollectionCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        cell.tableView.contentOffset = self.setOffset;
     }
 }
 
@@ -46,9 +45,42 @@ static NSString * const CellIdentifier = @"CompareCollectionCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CompareCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.delegate = self.delegate;
+    cell.tableView.delegate = self;
     [cell setModel:self.dataArr[indexPath.item] index:indexPath.item];
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *sectionHeader = [[UIView alloc] init];
+    return sectionHeader;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
+bool flag = YES;
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if ([scrollView isKindOfClass:[UITableView class]]) {
+        if (!flag) return;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(e_scrollViewDidScroll:)]) {
+            [self.delegate e_scrollViewDidScroll:scrollView];
+        }
+        
+    } else {
+        flag = NO;
+        for (int i = 0; i < self.dataArr.count; i++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+            CompareCollectionCell *cell = (CompareCollectionCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+            cell.tableView.contentOffset = self.setOffset;
+        }
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    flag = YES;
 }
 
 #pragma mark - setter/getter

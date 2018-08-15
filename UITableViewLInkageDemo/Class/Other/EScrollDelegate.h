@@ -11,4 +11,5 @@
 @protocol EScrollDelegate <NSObject>
 
 - (void)e_scrollViewDidScroll:(UIScrollView *)scrollView;
+
 @end
