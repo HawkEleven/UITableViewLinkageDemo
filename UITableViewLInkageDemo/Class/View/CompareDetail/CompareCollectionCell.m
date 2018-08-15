@@ -13,7 +13,7 @@
 #import "Header.h"
 
 static CGFloat const kHeaderHeight = 66;
-@interface CompareCollectionCell () <UITableViewDelegate, UITableViewDataSource>
+@interface CompareCollectionCell () <UITableViewDataSource>
 
 @property (nonatomic,   copy) NSArray<GroupParamsModel *> *dataArr;
 @property (nonatomic, strong) CompareRightHeader *header;
@@ -46,15 +46,6 @@ static CGFloat const kHeaderHeight = 66;
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *sectionHeader = [[UIView alloc] init];
-    return sectionHeader;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
-}
-
 #pragma mark - setter/getter
 - (void)setModel:(CarModel *)model index:(NSInteger)index {
     _index  = index;
@@ -75,7 +66,6 @@ static CGFloat const kHeaderHeight = 66;
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] init];
-        _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 40;
         _tableView.bounces = NO;

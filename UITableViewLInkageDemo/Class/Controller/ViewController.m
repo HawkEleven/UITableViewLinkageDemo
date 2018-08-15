@@ -13,12 +13,6 @@
 #import "CarModel.h"
 #import "YYModel.h"
 
-typedef NS_ENUM(NSInteger, ParameterCompareType) {
-    ParameterCompareTypeAdd, // 添加车型
-    ParameterCompareTypeDelete // 删除车型
-};
-
-
 @interface ViewController () <EScrollDelegate>
 
 @property (nonatomic, strong) ConfigurationView *configurationView;
@@ -39,7 +33,7 @@ typedef NS_ENUM(NSInteger, ParameterCompareType) {
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.compareDetailView];
     [self.view addSubview:self.configurationView];
-
+    
     [self loadData];
 }
 
@@ -66,12 +60,24 @@ typedef NS_ENUM(NSInteger, ParameterCompareType) {
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
     self.dataArr = [NSArray yy_modelArrayWithClass:[CarModel class] json:dict[@"data"]].mutableCopy;
     
-    // 加组空数据
+    // 加一组空数据
     CarModel *model = [[CarModel alloc] init];
     [self.dataArr addObject:model];
     
     [self.configurationView setDatas:self.dataArr];
     [self.compareDetailView setDatas:self.dataArr];
+}
+
+- (void)_getTableViewsInView:(UIView *)superView thenSetContentOffset:(CGPoint)offset {
+    UIView *sv = superView;
+    CGPoint of = offset;
+    for (UIView *view in sv.subviews) {
+        if ([view isKindOfClass:[UITableView class]]) {
+            ((UITableView *)view).contentOffset = of;
+        } else {
+            [self _getTableViewsInView:view thenSetContentOffset:of];
+        }
+    }
 }
 
 #pragma mark - notification
@@ -92,15 +98,22 @@ typedef NS_ENUM(NSInteger, ParameterCompareType) {
 
 #pragma mark - EScrollDelegate
 #pragma mark - tableveiw联动设置
+bool flag = YES;
 - (void)e_scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if (scrollView == self.configurationView.tableView) {
-//        [self.compareDetailView setScrollWithContentOffset:scrollView.contentOffset];
-//    } else {
-//        [self.configurationView setScrollWithContentOffset:scrollView.contentOffset];
-//    }
-    [self.compareDetailView setScrollWithContentOffset:scrollView.contentOffset];
-    [self.configurationView setScrollWithContentOffset:scrollView.contentOffset];
+    NSLog(@"%@", [scrollView class]);
+    if ([scrollView isKindOfClass:[UITableView class]]) {
+        if (!flag) return;
+        [self _getTableViewsInView:self.view thenSetContentOffset:scrollView.contentOffset];
+    } else {
+        flag = NO;
+        [self _getTableViewsInView:self.compareDetailView.collectionView thenSetContentOffset:self.configurationView.tableView.contentOffset];
+    }
+}
 
+- (void)e_scrollViewDidEndScroll:(UIScrollView *)scrollView {
+    if ([scrollView isKindOfClass:[UICollectionView class]]) {
+        flag = YES;
+    }
 }
 
 #pragma mark - getter

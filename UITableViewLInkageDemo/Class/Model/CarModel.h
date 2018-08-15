@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class CarSpeccolorlistModel, GroupParamsModel, ParamlistModel;
 @interface CarModel : NSObject
@@ -20,6 +21,9 @@
 @property (nonatomic,   copy) NSString *specName;
 
 @property (nonatomic, assign) NSInteger seriesId;
+
+// 同步滚动距离
+@property (nonatomic, assign) CGPoint currentOffset;
 
 @end
 

@@ -12,9 +12,8 @@
 @class CarModel;
 @interface CompareDetailView : UIView
 
+@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic,   copy) NSArray<CarModel *> *datas;
 @property (nonatomic,   weak) id<EScrollDelegate> delegate;
-
-- (void)setScrollWithContentOffset:(CGPoint)offset;
 
 @end

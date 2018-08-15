@@ -16,6 +16,4 @@
 @property (nonatomic,   copy) NSArray<CarModel *> *datas;
 @property (nonatomic,   weak) id<EScrollDelegate> delegate;
 
-- (void)setScrollWithContentOffset:(CGPoint)offset;
-
 @end

@@ -14,7 +14,6 @@
 static NSString * const CellIdentifier = @"CompareCollectionCell";
 @interface CompareDetailView () <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, assign) CGPoint setOffset;
 
@@ -25,17 +24,6 @@ static NSString * const CellIdentifier = @"CompareCollectionCell";
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.collectionView.frame = self.bounds;
-}
-
-#pragma mark - public method
-- (void)setScrollWithContentOffset:(CGPoint)offset {
-    self.setOffset = offset;
-
-    for (int i = 0; i < self.dataArr.count; i++) {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        CompareCollectionCell *cell = (CompareCollectionCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
-        cell.tableView.contentOffset = self.setOffset;
-    }
 }
 
 #pragma mark - ====== UICollectionViewDelegate,UICollectionViewDataSource =====
@@ -60,27 +48,23 @@ static NSString * const CellIdentifier = @"CompareCollectionCell";
     return 30;
 }
 
-bool flag = YES;
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if ([scrollView isKindOfClass:[UITableView class]]) {
-        if (!flag) return;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(e_scrollViewDidScroll:)]) {
-            [self.delegate e_scrollViewDidScroll:scrollView];
-        }
-        
-    } else {
-        flag = NO;
-        for (int i = 0; i < self.dataArr.count; i++) {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-            CompareCollectionCell *cell = (CompareCollectionCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
-            cell.tableView.contentOffset = self.setOffset;
-        }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(e_scrollViewDidScroll:)]) {
+        [self.delegate e_scrollViewDidScroll:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(e_scrollViewDidEndScroll:)]) {
+        [self.delegate e_scrollViewDidEndScroll:scrollView];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    flag = YES;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(e_scrollViewDidEndScroll:)]) {
+        [self.delegate e_scrollViewDidEndScroll:scrollView];
+    }
 }
 
 #pragma mark - setter/getter

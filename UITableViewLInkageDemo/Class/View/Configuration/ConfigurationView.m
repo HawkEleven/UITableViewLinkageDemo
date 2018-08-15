@@ -44,11 +44,6 @@ static CGFloat const kHeaderHeight = 66;
     self.tableView.frame = CGRectMake(0, kHeaderHeight, self.bounds.size.width, self.bounds.size.height - kHeaderHeight);
 }
 
-#pragma mark - public method
-- (void)setScrollWithContentOffset:(CGPoint)offset {
-    self.tableView.contentOffset = offset;
-}
-
 #pragma mark - <UITableViewDelegate, UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataArr.count;
