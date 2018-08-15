@@ -55,15 +55,6 @@ static CGFloat const kHeaderHeight = 66;
     return 30;
 }
 
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == self.tableView) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(e_scrollViewDidScroll:)]) {
-            [self.delegate e_scrollViewDidScroll:scrollView];
-        }
-    }
-}
-
 #pragma mark - setter/getter
 - (void)setModel:(CarModel *)model index:(NSInteger)index {
     _index  = index;

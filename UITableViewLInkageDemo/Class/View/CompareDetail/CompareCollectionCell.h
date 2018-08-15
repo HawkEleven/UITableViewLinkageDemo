@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EScrollDelegate.h"
 
 @class CarModel;
 @interface CompareCollectionCell : UICollectionViewCell
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic,   weak) id<EScrollDelegate> delegate;
 
 - (void)setModel:(CarModel *)model index:(NSInteger)index;
 
