@@ -68,14 +68,22 @@
     [self.compareDetailView setDatas:self.dataArr];
 }
 
-- (void)_getTableViewsInView:(UIView *)superView thenSetContentOffset:(CGPoint)offset {
+- (void)_getTableViewsInView:(UIView *)superView excludeView:(UIView *)excludeView thenSetContentOffset:(CGPoint)offset {
     UIView *sv = superView;
+    UIView *ex = excludeView;
     CGPoint of = offset;
     for (UIView *view in sv.subviews) {
         if ([view isKindOfClass:[UITableView class]]) {
-            ((UITableView *)view).contentOffset = of;
+            if (view != ex) {
+                ((UITableView *)view).contentOffset = of;
+                if (((UITableView *)view) == self.configurationView.tableView) {
+                    NSLog(@"左侧UITableView:%f", ((UITableView *)view).contentOffset.y);
+                } else {
+                    NSLog(@"右侧UITableView:%f", ((UITableView *)view).contentOffset.y);
+                }
+            }
         } else {
-            [self _getTableViewsInView:view thenSetContentOffset:of];
+            [self _getTableViewsInView:view excludeView:ex thenSetContentOffset:of];
         }
     }
 }
@@ -100,13 +108,12 @@
 #pragma mark - tableveiw联动设置
 bool flag = YES;
 - (void)e_scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%@", [scrollView class]);
     if ([scrollView isKindOfClass:[UITableView class]]) {
         if (!flag) return;
-        [self _getTableViewsInView:self.view thenSetContentOffset:scrollView.contentOffset];
+        [self _getTableViewsInView:self.view excludeView:scrollView thenSetContentOffset:scrollView.contentOffset];
     } else {
         flag = NO;
-        [self _getTableViewsInView:self.compareDetailView.collectionView thenSetContentOffset:self.configurationView.tableView.contentOffset];
+//        [self _getTableViewsInView:self.compareDetailView.collectionView excludeView:self.configurationView.tableView thenSetContentOffset:self.configurationView.tableView.contentOffset];
     }
 }
 
