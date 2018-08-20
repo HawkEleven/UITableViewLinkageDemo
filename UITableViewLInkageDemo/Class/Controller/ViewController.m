@@ -44,12 +44,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteEvent:) name:@"deleteNotification" object:nil];
 }
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    self.configurationView.frame = CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - STATUS_AND_NAVIGATION_HEIGHT);
-    self.compareDetailView.frame = CGRectMake(ITEM_WIDTH, STATUS_AND_NAVIGATION_HEIGHT, SCREEN_WIDTH - ITEM_WIDTH, SCREEN_HEIGHT - STATUS_AND_NAVIGATION_HEIGHT);
-}
-
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"addNotification" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"deleteNotification" object:nil];
@@ -66,26 +60,6 @@
     
     [self.configurationView setDatas:self.dataArr];
     [self.compareDetailView setDatas:self.dataArr];
-}
-
-- (void)_getTableViewsInView:(UIView *)superView excludeView:(UIView *)excludeView thenSetContentOffset:(CGPoint)offset {
-    UIView *sv = superView;
-    UIView *ex = excludeView;
-    CGPoint of = offset;
-    for (UIView *view in sv.subviews) {
-        if ([view isKindOfClass:[UITableView class]]) {
-            if (view != ex) {
-                ((UITableView *)view).contentOffset = of;
-                if (((UITableView *)view) == self.configurationView.tableView) {
-                    NSLog(@"左侧UITableView:%f", ((UITableView *)view).contentOffset.y);
-                } else {
-                    NSLog(@"右侧UITableView:%f", ((UITableView *)view).contentOffset.y);
-                }
-            }
-        } else {
-            [self _getTableViewsInView:view excludeView:ex thenSetContentOffset:of];
-        }
-    }
 }
 
 #pragma mark - notification
@@ -106,20 +80,11 @@
 
 #pragma mark - EScrollDelegate
 #pragma mark - tableveiw联动设置
-bool flag = YES;
 - (void)e_scrollViewDidScroll:(UIScrollView *)scrollView {
-    if ([scrollView isKindOfClass:[UITableView class]]) {
-        if (!flag) return;
-        [self _getTableViewsInView:self.view excludeView:scrollView thenSetContentOffset:scrollView.contentOffset];
+    if (scrollView == self.configurationView.tableView) {
+        self.compareDetailView.tableView.contentOffset = scrollView.contentOffset;
     } else {
-        flag = NO;
-//        [self _getTableViewsInView:self.compareDetailView.collectionView excludeView:self.configurationView.tableView thenSetContentOffset:self.configurationView.tableView.contentOffset];
-    }
-}
-
-- (void)e_scrollViewDidEndScroll:(UIScrollView *)scrollView {
-    if ([scrollView isKindOfClass:[UICollectionView class]]) {
-        flag = YES;
+        self.configurationView.tableView.contentOffset = scrollView.contentOffset;
     }
 }
 

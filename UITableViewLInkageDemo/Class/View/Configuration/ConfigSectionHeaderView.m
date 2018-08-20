@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Hawk. All rights reserved.
 //
 
-#import "CompareSectionHeaderView.h"
+#import "ConfigSectionHeaderView.h"
 
-@implementation CompareSectionHeaderView
+@implementation ConfigSectionHeaderView
 {
     /// 标题
     __weak IBOutlet UILabel *_title;
@@ -21,7 +21,7 @@
 }
 
 + (instancetype)creatView {
-    return [[[NSBundle mainBundle] loadNibNamed:@"CompareSectionHeaderView" owner:self options:nil] objectAtIndex:0];
+    return [[[NSBundle mainBundle] loadNibNamed:@"ConfigSectionHeaderView" owner:self options:nil] objectAtIndex:0];
 }
 
 

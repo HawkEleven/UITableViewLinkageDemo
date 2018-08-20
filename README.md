@@ -1,4 +1,4 @@
-# UITableViewLinkageDemo（bug修复中，莫急）
+# UITableViewLinkageDemo
 
 iOS采用UITableView来实现Excel、课程表、汽车之家车辆参数对比的上下左右联动效果。
 
@@ -22,7 +22,7 @@ iOS采用UITableView来实现Excel、课程表、汽车之家车辆参数对比�
 
 1）视图有两部分组成：左侧**ConfigurationView**和右侧**CompareDetailView**；
 
-2）CompareDetailView在视图底层，宽度为绿色区域宽，核心为UICollectionView，collectionViewCell上添加“头部蓝色视图”和“UITableview”；
+2）CompareDetailView在视图底层，宽度为绿色区域宽，核心为UITableView，添加到UIScrollview上面，这样就可实现上下和左右滑动；
 
 3）ConfigurationView在视图顶层，宽度为屏幕宽，核心为UITableview，且tableviewCell宽度为红色区域宽度。
 

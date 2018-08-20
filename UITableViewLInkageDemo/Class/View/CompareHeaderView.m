@@ -36,8 +36,8 @@
 }
 
 - (IBAction)delete:(UIButton *)sender {
-    if (_deleteBlock) {
-        _deleteBlock(sender);
+    if (self.deleteBlock) {
+        self.deleteBlock();
     }
 }
 
@@ -50,8 +50,8 @@
 }
 
 - (IBAction)add:(UIButton *)sender {
-    if (_addBlock) {
-        _addBlock();
+    if (self.addBlock) {
+        self.addBlock();
     }
 }
 

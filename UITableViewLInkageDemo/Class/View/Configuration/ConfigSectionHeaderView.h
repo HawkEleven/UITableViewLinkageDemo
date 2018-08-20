@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CompareSectionHeaderView : UIView
+@interface ConfigSectionHeaderView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 

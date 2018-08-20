@@ -12,8 +12,9 @@
 @class CarModel;
 @interface CompareDetailView : UIView
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic,   copy) NSArray<CarModel *> *datas;
 @property (nonatomic,   weak) id<EScrollDelegate> delegate;
+
 
 @end

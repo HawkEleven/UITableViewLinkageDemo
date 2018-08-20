@@ -9,8 +9,8 @@
 #import "ConfigurationView.h"
 #import "Header.h"
 #import "CompareHeaderView.h"
-#import "CompareCell.h"
-#import "CompareSectionHeaderView.h"
+#import "ConfigCell.h"
+#import "ConfigSectionHeaderView.h"
 #import "CarModel.h"
 
 static CGFloat const kHeaderHeight = 66;
@@ -38,12 +38,6 @@ static CGFloat const kHeaderHeight = 66;
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    self.hiddenHeader.frame = CGRectMake(0, 0, ITEM_WIDTH, kHeaderHeight);
-    self.tableView.frame = CGRectMake(0, kHeaderHeight, self.bounds.size.width, self.bounds.size.height - kHeaderHeight);
-}
-
 #pragma mark - <UITableViewDelegate, UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataArr.count;
@@ -54,14 +48,14 @@ static CGFloat const kHeaderHeight = 66;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CompareLeftCell *cell = [CompareLeftCell cellWithTableView:tableView];
+    ConfigCell *cell = [ConfigCell cellWithTableView:tableView];
     cell.titleLabel.text = self.dataArr[indexPath.section].paramList[indexPath.row].paramName;
     cell.backgroundColor = self.backgroundColor;
     return cell;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    CompareSectionHeaderView *sectionHeader = [CompareSectionHeaderView creatView];
+    ConfigSectionHeaderView *sectionHeader = [ConfigSectionHeaderView creatView];
     sectionHeader.titleLabel.text = self.dataArr[section].groupName;
     return sectionHeader;
 }
@@ -93,7 +87,7 @@ static CGFloat const kHeaderHeight = 66;
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, self.bounds.size.width, self.bounds.size.height - kHeaderHeight)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 40;
@@ -110,6 +104,7 @@ static CGFloat const kHeaderHeight = 66;
 - (CompareHiddenHeader *)hiddenHeader {
     if (!_hiddenHeader) {
         _hiddenHeader = [CompareHiddenHeader creatView];
+        _hiddenHeader.frame = CGRectMake(0, 0, ITEM_WIDTH, kHeaderHeight);
         _hiddenHeader.hiddenBlock = ^(UIButton *button) {
             
         };

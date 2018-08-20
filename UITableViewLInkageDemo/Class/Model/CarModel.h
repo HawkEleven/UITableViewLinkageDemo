@@ -22,9 +22,6 @@
 
 @property (nonatomic, assign) NSInteger seriesId;
 
-// 同步滚动距离
-@property (nonatomic, assign) CGPoint currentOffset;
-
 @end
 
 

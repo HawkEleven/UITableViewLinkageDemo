@@ -15,18 +15,20 @@
 		18700D941F0A18A300F51FB4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18700D841F0A18A300F51FB4 /* ViewController.m */; };
 		18700D951F0A18A300F51FB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18700D881F0A18A300F51FB4 /* AppDelegate.m */; };
 		18700D961F0A18A300F51FB4 /* CompareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18700D8C1F0A18A300F51FB4 /* CompareCell.m */; };
-		18700D971F0A18A300F51FB4 /* CompareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18700D8D1F0A18A300F51FB4 /* CompareCell.xib */; };
 		18700D981F0A18A300F51FB4 /* CompareHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18700D8F1F0A18A300F51FB4 /* CompareHeaderView.m */; };
 		18700D991F0A18A300F51FB4 /* CompareHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18700D901F0A18A300F51FB4 /* CompareHeaderView.xib */; };
-		18700D9A1F0A18A300F51FB4 /* CompareSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18700D921F0A18A300F51FB4 /* CompareSectionHeaderView.m */; };
-		18700D9B1F0A18A300F51FB4 /* CompareSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18700D931F0A18A300F51FB4 /* CompareSectionHeaderView.xib */; };
+		18700D9A1F0A18A300F51FB4 /* ConfigSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18700D921F0A18A300F51FB4 /* ConfigSectionHeaderView.m */; };
+		18700D9B1F0A18A300F51FB4 /* ConfigSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18700D931F0A18A300F51FB4 /* ConfigSectionHeaderView.xib */; };
 		A56862E02122743F00F4D56E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A56862D82122743F00F4D56E /* LICENSE */; };
 		A56862E12122743F00F4D56E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A56862D92122743F00F4D56E /* README.md */; };
 		A56862E22122743F00F4D56E /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A56862DD2122743F00F4D56E /* NSObject+YYModel.m */; };
 		A56862E32122743F00F4D56E /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A56862DE2122743F00F4D56E /* YYClassInfo.m */; };
 		A56862E62122806C00F4D56E /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A56862E52122806C00F4D56E /* BackgroundView.m */; };
 		A56862EC2122B8F800F4D56E /* CompareTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A56862EA2122B8F800F4D56E /* CompareTableView.m */; };
-		A59237ED2121785B0055A5B4 /* CompareCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59237EC2121785B0055A5B4 /* CompareCollectionCell.m */; };
+		A58069E2212AA1A6003F79CB /* ConfigCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A58069E1212AA1A6003F79CB /* ConfigCell.m */; };
+		A58069E4212AA1BC003F79CB /* ConfigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58069E3212AA1BC003F79CB /* ConfigCell.xib */; };
+		A58069E8212AA52D003F79CB /* CompareItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58069E7212AA52D003F79CB /* CompareItem.xib */; };
+		A58069EB212AB232003F79CB /* CompareTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A58069EA212AB232003F79CB /* CompareTableHeader.m */; };
 		A59237F021217ED40055A5B4 /* ConfigurationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59237EF21217ED40055A5B4 /* ConfigurationView.m */; };
 		A59237F321217EEA0055A5B4 /* CompareDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59237F221217EEA0055A5B4 /* CompareDetailView.m */; };
 		A59237FA21218BCD0055A5B4 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A59237F921218BCD0055A5B4 /* CarModel.m */; };
@@ -60,13 +62,12 @@
 		18700D891F0A18A300F51FB4 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		18700D8B1F0A18A300F51FB4 /* CompareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareCell.h; sourceTree = "<group>"; };
 		18700D8C1F0A18A300F51FB4 /* CompareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareCell.m; sourceTree = "<group>"; };
-		18700D8D1F0A18A300F51FB4 /* CompareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompareCell.xib; sourceTree = "<group>"; };
 		18700D8E1F0A18A300F51FB4 /* CompareHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareHeaderView.h; sourceTree = "<group>"; };
 		18700D8F1F0A18A300F51FB4 /* CompareHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareHeaderView.m; sourceTree = "<group>"; };
 		18700D901F0A18A300F51FB4 /* CompareHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompareHeaderView.xib; sourceTree = "<group>"; };
-		18700D911F0A18A300F51FB4 /* CompareSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareSectionHeaderView.h; sourceTree = "<group>"; };
-		18700D921F0A18A300F51FB4 /* CompareSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareSectionHeaderView.m; sourceTree = "<group>"; };
-		18700D931F0A18A300F51FB4 /* CompareSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompareSectionHeaderView.xib; sourceTree = "<group>"; };
+		18700D911F0A18A300F51FB4 /* ConfigSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSectionHeaderView.h; sourceTree = "<group>"; };
+		18700D921F0A18A300F51FB4 /* ConfigSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSectionHeaderView.m; sourceTree = "<group>"; };
+		18700D931F0A18A300F51FB4 /* ConfigSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigSectionHeaderView.xib; sourceTree = "<group>"; };
 		A56862D82122743F00F4D56E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A56862D92122743F00F4D56E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A56862DB2122743F00F4D56E /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
@@ -79,8 +80,12 @@
 		A56862E72122834D00F4D56E /* EScrollDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EScrollDelegate.h; sourceTree = "<group>"; };
 		A56862EA2122B8F800F4D56E /* CompareTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareTableView.m; sourceTree = "<group>"; };
 		A56862EB2122B8F800F4D56E /* CompareTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareTableView.h; sourceTree = "<group>"; };
-		A59237EB2121785B0055A5B4 /* CompareCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompareCollectionCell.h; sourceTree = "<group>"; };
-		A59237EC2121785B0055A5B4 /* CompareCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompareCollectionCell.m; sourceTree = "<group>"; };
+		A58069E0212AA1A6003F79CB /* ConfigCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigCell.h; sourceTree = "<group>"; };
+		A58069E1212AA1A6003F79CB /* ConfigCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigCell.m; sourceTree = "<group>"; };
+		A58069E3212AA1BC003F79CB /* ConfigCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigCell.xib; sourceTree = "<group>"; };
+		A58069E7212AA52D003F79CB /* CompareItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompareItem.xib; sourceTree = "<group>"; };
+		A58069E9212AB232003F79CB /* CompareTableHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompareTableHeader.h; sourceTree = "<group>"; };
+		A58069EA212AB232003F79CB /* CompareTableHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompareTableHeader.m; sourceTree = "<group>"; };
 		A59237EE21217ED40055A5B4 /* ConfigurationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationView.h; sourceTree = "<group>"; };
 		A59237EF21217ED40055A5B4 /* ConfigurationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigurationView.m; sourceTree = "<group>"; };
 		A59237F121217EEA0055A5B4 /* CompareDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompareDetailView.h; sourceTree = "<group>"; };
@@ -176,6 +181,8 @@
 		18700D861F0A18A300F51FB4 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				A56862EB2122B8F800F4D56E /* CompareTableView.h */,
+				A56862EA2122B8F800F4D56E /* CompareTableView.m */,
 				A56862E72122834D00F4D56E /* EScrollDelegate.h */,
 				A59237FB21218CFE0055A5B4 /* comparedata.json */,
 				18700D641F09ED4100F51FB4 /* Main.storyboard */,
@@ -192,16 +199,11 @@
 		18700D8A1F0A18A300F51FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A56862E82122875E00F4D56E /* Configuration */,
-				A56862E92122876E00F4D56E /* CompareDetail */,
-				A56862EB2122B8F800F4D56E /* CompareTableView.h */,
-				A56862EA2122B8F800F4D56E /* CompareTableView.m */,
-				18700D8B1F0A18A300F51FB4 /* CompareCell.h */,
-				18700D8C1F0A18A300F51FB4 /* CompareCell.m */,
-				18700D8D1F0A18A300F51FB4 /* CompareCell.xib */,
 				18700D8E1F0A18A300F51FB4 /* CompareHeaderView.h */,
 				18700D8F1F0A18A300F51FB4 /* CompareHeaderView.m */,
 				18700D901F0A18A300F51FB4 /* CompareHeaderView.xib */,
+				A56862E82122875E00F4D56E /* Configuration */,
+				A56862E92122876E00F4D56E /* CompareDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,9 +237,12 @@
 				A56862E52122806C00F4D56E /* BackgroundView.m */,
 				A59237EE21217ED40055A5B4 /* ConfigurationView.h */,
 				A59237EF21217ED40055A5B4 /* ConfigurationView.m */,
-				18700D911F0A18A300F51FB4 /* CompareSectionHeaderView.h */,
-				18700D921F0A18A300F51FB4 /* CompareSectionHeaderView.m */,
-				18700D931F0A18A300F51FB4 /* CompareSectionHeaderView.xib */,
+				A58069E0212AA1A6003F79CB /* ConfigCell.h */,
+				A58069E1212AA1A6003F79CB /* ConfigCell.m */,
+				A58069E3212AA1BC003F79CB /* ConfigCell.xib */,
+				18700D911F0A18A300F51FB4 /* ConfigSectionHeaderView.h */,
+				18700D921F0A18A300F51FB4 /* ConfigSectionHeaderView.m */,
+				18700D931F0A18A300F51FB4 /* ConfigSectionHeaderView.xib */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -247,8 +252,11 @@
 			children = (
 				A59237F121217EEA0055A5B4 /* CompareDetailView.h */,
 				A59237F221217EEA0055A5B4 /* CompareDetailView.m */,
-				A59237EB2121785B0055A5B4 /* CompareCollectionCell.h */,
-				A59237EC2121785B0055A5B4 /* CompareCollectionCell.m */,
+				A58069E9212AB232003F79CB /* CompareTableHeader.h */,
+				A58069EA212AB232003F79CB /* CompareTableHeader.m */,
+				18700D8B1F0A18A300F51FB4 /* CompareCell.h */,
+				18700D8C1F0A18A300F51FB4 /* CompareCell.m */,
+				A58069E7212AA52D003F79CB /* CompareItem.xib */,
 			);
 			path = CompareDetail;
 			sourceTree = "<group>";
@@ -345,14 +353,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				18700D991F0A18A300F51FB4 /* CompareHeaderView.xib in Resources */,
-				18700D9B1F0A18A300F51FB4 /* CompareSectionHeaderView.xib in Resources */,
+				18700D9B1F0A18A300F51FB4 /* ConfigSectionHeaderView.xib in Resources */,
 				A56862E02122743F00F4D56E /* LICENSE in Resources */,
+				A58069E8212AA52D003F79CB /* CompareItem.xib in Resources */,
 				18700D6B1F09ED4100F51FB4 /* LaunchScreen.storyboard in Resources */,
 				18700D681F09ED4100F51FB4 /* Assets.xcassets in Resources */,
 				A59237FC21218CFE0055A5B4 /* comparedata.json in Resources */,
 				A56862E12122743F00F4D56E /* README.md in Resources */,
 				18700D661F09ED4100F51FB4 /* Main.storyboard in Resources */,
-				18700D971F0A18A300F51FB4 /* CompareCell.xib in Resources */,
+				A58069E4212AA1BC003F79CB /* ConfigCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,16 +379,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58069EB212AB232003F79CB /* CompareTableHeader.m in Sources */,
 				A56862E62122806C00F4D56E /* BackgroundView.m in Sources */,
 				18700D941F0A18A300F51FB4 /* ViewController.m in Sources */,
+				A58069E2212AA1A6003F79CB /* ConfigCell.m in Sources */,
 				A59237F021217ED40055A5B4 /* ConfigurationView.m in Sources */,
-				18700D9A1F0A18A300F51FB4 /* CompareSectionHeaderView.m in Sources */,
+				18700D9A1F0A18A300F51FB4 /* ConfigSectionHeaderView.m in Sources */,
 				A56862E22122743F00F4D56E /* NSObject+YYModel.m in Sources */,
 				A56862EC2122B8F800F4D56E /* CompareTableView.m in Sources */,
 				A59237F321217EEA0055A5B4 /* CompareDetailView.m in Sources */,
 				18700D5D1F09ED4100F51FB4 /* main.m in Sources */,
 				18700D981F0A18A300F51FB4 /* CompareHeaderView.m in Sources */,
-				A59237ED2121785B0055A5B4 /* CompareCollectionCell.m in Sources */,
 				18700D951F0A18A300F51FB4 /* AppDelegate.m in Sources */,
 				A56862E32122743F00F4D56E /* YYClassInfo.m in Sources */,
 				A59237FA21218BCD0055A5B4 /* CarModel.m in Sources */,
