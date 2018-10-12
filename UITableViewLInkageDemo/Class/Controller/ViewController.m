@@ -35,6 +35,8 @@
     [self.view addSubview:self.configurationView];
     
     [self loadData];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
