@@ -22,7 +22,8 @@ return !(_array) ? (_array) = [NSMutableArray array] : (_array);
 //////////////////////////////////////////////////////////////
 
 // 判断是否iPhone X
-#define IS_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define  IS_iPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size)  || CGSizeEqualToSize(CGSizeMake(414.f, 896.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(896.f, 414.f), [UIScreen mainScreen].bounds.size))
+
 
 // status bar height.
 #define STATUS_BAR_HEIGHT (IS_iPhoneX ? 44.f : 20.f)
