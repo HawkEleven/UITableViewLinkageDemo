@@ -44,10 +44,6 @@ static CGFloat const kHeaderHeight = 66;
     return sectionHeader;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
-}
-
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.delegate && [self.delegate respondsToSelector:@selector(e_scrollViewDidScroll:)]) {
@@ -75,6 +71,7 @@ static CGFloat const kHeaderHeight = 66;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 40;
+        _tableView.sectionHeaderHeight = 30;
         _tableView.bounces = NO;
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

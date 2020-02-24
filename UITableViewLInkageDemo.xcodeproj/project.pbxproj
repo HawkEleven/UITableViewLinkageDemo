@@ -319,6 +319,7 @@
 				TargetAttributes = {
 					18700D571F09ED4100F51FB4 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = Y7UYL5JAB6;
 						ProvisioningStyle = Automatic;
 					};
 					18700D701F09ED4100F51FB4 = {
@@ -333,6 +334,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -533,11 +535,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y7UYL5JAB6;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = UITableViewLInkageDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eleven.UITableViewLInkageDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eleven.UITableViewLInkage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -546,11 +549,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y7UYL5JAB6;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = UITableViewLInkageDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eleven.UITableViewLInkageDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eleven.UITableViewLInkage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -18,6 +18,7 @@
 @property (nonatomic, strong) ConfigurationView *configurationView;
 @property (nonatomic, strong) CompareDetailView *compareDetailView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, copy) NSArray *sourceArr;
 
 @end
 
@@ -56,6 +57,8 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
     self.dataArr = [NSArray yy_modelArrayWithClass:[CarModel class] json:dict[@"data"]].mutableCopy;
     
+    self.sourceArr = [self.dataArr copy];
+    
     // 加一组空数据
     CarModel *model = [[CarModel alloc] init];
     [self.dataArr addObject:model];
@@ -67,7 +70,7 @@
 #pragma mark - notification
 #pragma mark - 模拟添加与删除数据
 - (void)addEvent {
-    CarModel *model = self.dataArr[1];
+    CarModel *model = self.sourceArr[arc4random() % self.sourceArr.count];
     [self.dataArr insertObject:model atIndex:self.dataArr.count - 1];
     [self.configurationView setDatas:self.dataArr];
     [self.compareDetailView setDatas:self.dataArr];
